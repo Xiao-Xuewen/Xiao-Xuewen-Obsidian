@@ -6,11 +6,11 @@
 1. `git --version` 检查版本号
 2. `git config --global user.name "Xiao-Xuewen"`
 3. `git config --global user.email 1427602986@qq.com`
-## 三、first commit
+# 三、first commit
 1. 进入项目目录后，`git init` 初始化本地git仓库 执行之后再执行`git status` 出现 On branch main即为正常
 2. 暂存区：修改的代码可以通过`git add`进入暂存区`git commit`实际记录的是暂存区的修改,可以选择性的`git add`。
 3. 进入暂存区的文件再git commit就会保存记录在本地仓库，使用`git commit -m "message"`
-## 四、first push
+# 四、first push
 ### 4.1 配置SSH Key
 1. 配置github SSH Key:终端输入：`ssh-keygen -t ed25519 -C "github邮箱"`后回车使用默认位置即可，生成之后可以在默认路径找到私钥：`id_ed25519`和公钥：`id_ed25519.pub`,**`id_ed25519` 私钥绝不能上传 GitHub、发给别人或提交进仓库**
 2. 使用`Get-Content $HOME\.ssh\id_ed25519.pub`查看公钥或者直接打开公钥文件复制公钥
