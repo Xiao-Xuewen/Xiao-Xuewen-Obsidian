@@ -180,18 +180,23 @@ $$
 $$
 z_{1} = w_{1}x+b_{1}
 $$
+
 $$
 a_{1}=\sigma(z_{1})
 $$
+
 $$
 z_{2}=w_{2}a_{1}+b_{2}
 $$
+
 $$
 a_{2} = \sigma(z_{2})
 $$
+
 $$
 L = \frac{1}{2}(a_{2}-y)^{2}
 $$
+
 我们如果需要计算：
 $$
 \frac{\partial L}{\partial w_{1}}
@@ -214,6 +219,7 @@ $$
 $$
 \frac{\partial L}{\partial w_{1,1}} = \frac{\partial L}{\partial a_{2}}\frac{\partial a_{2}}{\partial z_{2}}\frac{\partial z_{2}}{\partial a_{1}}\frac{\partial a_{1}}{\partial z_{1}}\frac{\partial z_{1}}{\partial w_{1,1}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}} = \frac{\partial L}{\partial a_{2}}\frac{\partial a_{2}}{\partial z_{2}}\frac{\partial z_{2}}{\partial a_{1}}\frac{\partial a_{1}}{\partial z_{1}}\frac{\partial z_{1}}{\partial w_{1,2}}
 $$
@@ -229,6 +235,7 @@ $$
 $$
 \frac{\partial L}{\partial w_{1,1}} = \delta_{1}\frac{\partial z_{1}}{\partial w_{1,1}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}} = \delta_{1}\frac{\partial z_{1}}{\partial w_{1,2}}
 $$
@@ -237,9 +244,11 @@ $$
 $$
 \frac{\partial L}{\partial b_{1}} = \delta_{1}\frac{\partial z_{1}}{\partial b_{1}}
 $$
+
 $$
 \frac{\partial L}{\partial b_{2}} = \delta_{2}\frac{\partial z_{2}}{\partial b_{2}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{2}} = \delta_{2}\frac{\partial z_{2}}{\partial w_{2}} 
 $$
@@ -249,12 +258,15 @@ $$
 $$
 z_{1}^{(1)} = w_{1,1}^{(1)}x_{1}+w_{1,2}^{(1)}x_{2}+b_{1}^{(1)}
 $$
+
 $$
 z_{2}^{(1)} = w_{2,1}^{(1)}x_{1}+w_{2,2}^{(1)}x_{2}+b_{2}^{(1)}
 $$
+
 $$
 a_{1}^{(1)} = \sigma (z_{1}^{(1)})
 $$
+
 $$
 a_{2}^{(1)} = \sigma (z_{2}^{(1)})
 $$
@@ -262,6 +274,7 @@ $$
 $$
 z_{1}^{(2)} = w_{1,1}^{(2)}a_{1}^{(1)}+w_{1,2}^{(2)}a_{2}^{(1)}+b_{1}^{(2)}
 $$
+
 $$
 a_{1}^{(2)} = \sigma(z_{1}^{(2)})
 $$
@@ -269,14 +282,17 @@ $$
 $$
 L = \frac{1}{2}(a_{1}^{(2)}-y)^{2}
 $$
+
 接下来我们推一下梯度：
 输出层：
 $$
 \frac{\partial L}{\partial w_{1,1}^{(2)}} = \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}} \frac{\partial z_{1}^{(2)}}{\partial w_{1,1}^{(2)}} 
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}^{(2)}} = \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}} \frac{\partial z_{1}^{(2)}}{\partial w_{1,2}^{(2)}} 
 $$
+
 我们记：
 $$
 \delta_{1}^{(2)} = \frac{\partial L}{\partial z_{1}^{(2)}}=\frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}
@@ -285,6 +301,7 @@ $$
 $$
 \frac{\partial L}{\partial w_{1,1}^{(2)}} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial w_{1,1}^{(2)}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}^{(2)}} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial w_{1,2}^{(2)}}
 $$
@@ -293,12 +310,15 @@ $$
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,1}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}\frac{\partial z_{1}^{(1)}}{\partial w_{1,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,2}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}\frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,1}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}\frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,2}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}\frac{\partial z_{2}^{(1)}}{\partial w_{2,2}^{(1)}}
 $$
@@ -306,6 +326,7 @@ $$
 $$
 \delta_{1}^{(1)} = \frac{\partial L}{\partial z_{1}^{(1)}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}
 $$
+
 $$
 \delta_{2}^{(1)} = \frac{\partial L}{\partial z_{2}^{(1)}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}
 $$
@@ -313,12 +334,15 @@ $$
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,1}} = \delta_{1}^{(1)}\frac{\partial z_{1}^{(1)}}{\partial w_{1,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,2}} = \delta_{1}^{(1)}\frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,1}} = \delta_{2}^{(1)}\frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,2}} = \delta_{2}^{(1)}\frac{\partial z_{2}^{(1)}}{\partial w_{2,2}^{(1)}}
 $$
@@ -326,9 +350,11 @@ $$
  $$
 \delta_{1}^{(2)} = \frac{\partial L}{\partial z_{1}^{(2)}}=\frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}} = (a_{1}^{(2)}-y)\sigma^{'}(z_{1}^{(2)})
 $$
+
 $$
 \delta_{1}^{(1)} = \frac{\partial L}{\partial z_{1}^{(1)}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}
 $$
+
 $$
 \delta_{2}^{(1)} = \frac{\partial L}{\partial z_{2}^{(1)}} = \frac{\partial L}{\partial a^{(2)}_{1}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}
 $$
@@ -337,6 +363,7 @@ $$
 $$
 \delta_{1}^{(1)} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}} = \delta_{1}^{(2)}w_{1,1}^{(2)}\sigma^{'}(z_{1}^{(1)})
 $$
+
 $$
 \delta_{2}^{(1)} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}} = \delta_{1}^{(2)}w_{1,2}^{(2)}\sigma^{'}(z_{2}^{(1)})
 $$
@@ -347,18 +374,23 @@ $$
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,1}} = \delta_{1}^{(1)}\frac{\partial z_{1}^{(1)}}{\partial w_{1,1}^{(1)}} = \delta_{1}^{(1)}x_{1}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{1,2}} = \delta_{1}^{(1)}\frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}} = \delta_{1}^{(1)}x_{2}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,1}} = \delta_{2}^{(1)}\frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}} = \delta_{2}^{(1)}x_{1}
 $$
+
 $$
 \frac{\partial L}{\partial w^{(1)}_{2,2}} = \delta_{2}^{(1)}\frac{\partial z_{2}^{(1)}}{\partial w_{2,2}^{(1)}} = \delta_{2}^{(1)}x_{2}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,1}^{(2)}} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial w_{1,1}^{(2)}} = \delta_{1}^{(2)}a_{1}^{(1)}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}^{(2)}} = \delta_{1}^{(2)}\frac{\partial z_{1}^{(2)}}{\partial w_{1,2}^{(2)}}= \delta_{1}^{(2)}a_{2}^{(1)}
 $$
@@ -374,6 +406,7 @@ $$
 $$
 z_{1}^{(1)} = w_{1,1}^{(1)}x_{1}+w_{1,2}^{(1)}x_{2}+b_{1}^{(1)}
 $$
+
 $$
 z_{2}^{(1)} = w_{2,1}^{(1)}x_{1}+w_{2,2}^{(1)}x_{2}+b_{2}^{(1)}
 $$
@@ -381,6 +414,7 @@ $$
 $$
 a_{1}^{(1)} = \sigma(z_{1}^{(1)})
 $$
+
 $$
 a_{2}^{(1)} = \sigma(z_{2}^{(1)})
 $$
@@ -388,6 +422,7 @@ $$
 $$
 z_{1}^{(2)} = w_{1,1}^{(2)}a_{1}^{(1)}+w_{1,2}^{(2)}a_{2}^{(1)}+b_{1}^{(2)}
 $$
+
 $$
 z_{2}^{(2)} = w_{2,1}^{(2)}a_{1}^{(1)}+w_{2,2}^{(2)}a_{2}^{(1)}+b_{2}^{(2)}
 $$
@@ -395,9 +430,11 @@ $$
 $$
 a_{1}^{(2)} = \sigma(z_{1}^{(2)})
 $$
+
 $$
 a_{2}^{(2)} = \sigma(z_{2}^{(2)})
 $$
+
 损失函数,我们给定目标的标签${}y_{1},y_{2}{}$：
 $$
 L = \frac{1}{2}(a_{1}^{(2)}-y_{1})^{2}+\frac{1}{2}(a_{2}^{(2)}-y_{2})^{2}
@@ -407,12 +444,15 @@ $$
 $$
 \frac{\partial L }{\partial w_{1,1}^{(2)}} = \frac{\partial L }{\partial a_{1}^{(2)}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial w_{1,1}^{(2)}}
 $$
+
 $$
 \frac{\partial L }{\partial w_{1,2}^{(2)}} = \frac{\partial L }{\partial a_{1}^{(2)}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial w_{1,2}^{(2)}}
 $$
+
 $$
 \frac{\partial L }{\partial w_{2,1}^{(2)}} = \frac{\partial L }{\partial a_{2}^{(2)}}\frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial w_{2,1}^{(2)}}
 $$
+
 $$
 \frac{\partial L }{\partial w_{2,2}^{(2)}} = \frac{\partial L }{\partial a_{2}^{(2)}}\frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial w_{2,2}^{(2)}}
 $$
@@ -420,6 +460,7 @@ $$
 $$
 \delta_{1}^{(2)} = \frac{\partial L}{\partial z_{1}^{(2)}}=\frac{\partial L }{\partial a_{1}^{(2)}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}
 $$
+
 $$
 \delta_{2}^{(2)} = \frac{\partial L}{\partial z_{2}^{(2)}} = \frac{\partial L }{\partial a_{2}^{(2)}}\frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}
 $$
@@ -429,16 +470,19 @@ $$
 =
 \delta_{1}^{(2)}a_{1}^{(1)}
 $$
+
 $$
 \frac{\partial L }{\partial w_{1,2}^{(2)}} = \delta_{1}^{(2)} \frac{\partial z_{1}^{(2)}}{\partial w_{1,2}^{(2)}}
 =
 \delta_{1}^{(2)}a_{2}^{(1)}
 $$
+
 $$
 \frac{\partial L }{\partial w_{2,1}^{(2)}} = \delta_{2}^{(2)} \frac{\partial z_{2}^{(2)}}{\partial w_{2,1}^{(2)}}
 =
 \delta_{2}^{(2)}a_{1}^{(1)}
 $$
+
 $$
 \frac{\partial L }{\partial w_{2,2}^{(2)}} =  \delta_{2}^{(2)} \frac{\partial z_{2}^{(2)}}{\partial w_{2,2}^{(2)}}
 =
@@ -451,18 +495,21 @@ $$
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}\frac{\partial z_{1}^{(1)}}{\partial w_{1,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}^{(1)}} = 
 \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}\frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}}
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}\frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{2,1}^{(1)}} = 
 \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}\frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}}
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}\frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}}
 $$
+
 $$
 \frac{\partial L}{\partial w_{2,2}^{(1)}} = 
 \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}\frac{\partial z_{2}^{(1)}}{\partial w_{2,2}^{(1)}}
@@ -475,6 +522,7 @@ $$
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}
 $$
+
 $$
 \delta_{2}^{(1)} = \frac{\partial L}{\partial z_{2}^{(1)}} = \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}
 +
@@ -486,16 +534,19 @@ $$
 =
 \delta_{1}^{(1)}x_{1}
 $$
+
 $$
 \frac{\partial L}{\partial w_{1,2}^{(1)}} = \delta_{1}^{(1)} \frac{\partial z_{1}^{(1)}}{\partial w_{1,2}^{(1)}}
 =
 \delta_{1}^{(1)}x_{2}
 $$
+
 $$
 \frac{\partial L}{\partial w_{2,1}^{(1)}} = \delta_{2}^{(1)} \frac{\partial z_{2}^{(1)}}{\partial w_{2,1}^{(1)}}
 =
 \delta_{2}^{(1)}x_{1}
 $$
+
 $$
 \frac{\partial L}{\partial w_{2,2}^{(1)}} = \delta_{2}^{(1)} \frac{\partial z_{2}^{(1)}}{\partial w_{2,2}^{(1)}}
 =
@@ -505,19 +556,23 @@ $$
 $$
 \delta_{1}^{(2)} = \frac{\partial L}{\partial z_{1}^{(2)}}=\frac{\partial L }{\partial a_{1}^{(2)}}\frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}
 $$
+
 $$
 \delta_{2}^{(2)} = \frac{\partial L}{\partial z_{2}^{(2)}} = \frac{\partial L }{\partial a_{2}^{(2)}}\frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}
 $$
+
 $$
 \delta_{1}^{(1)} = \frac{\partial L}{\partial z_{1}^{(1)}} = \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}}
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{1}^{(1)}}\frac{\partial a_{1}^{(1)}}{\partial z_{1}^{(1)}} 
 $$
+
 $$
 \delta_{2}^{(1)} = \frac{\partial L}{\partial z_{2}^{(1)}} = \frac{\partial L}{\partial a_{1}^{(2)}} \frac{\partial a_{1}^{(2)}}{\partial z_{1}^{(2)}}\frac{\partial z_{1}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}
 +
 \frac{\partial L}{\partial a_{2}^{(2)}} \frac{\partial a_{2}^{(2)}}{\partial z_{2}^{(2)}}\frac{\partial z_{2}^{(2)}}{\partial a_{2}^{(1)}}\frac{\partial a_{2}^{(1)}}{\partial z_{2}^{(1)}}
 $$
+
 
 $$
 \delta_{1}^{(1)} 
@@ -579,6 +634,7 @@ $$
 \delta^{(l)}_{n}
 \end{bmatrix}_{n \times 1}
 $$
+
 $$
 \sigma^{'}(z^{(l)})=
 \begin{bmatrix}
@@ -627,6 +683,7 @@ b_{2} \\
 b_{k}
 \end{bmatrix}_{k\times 1})
 $$
+
 $$
 a^{(1)} = \sigma(W\times a^{(0)}+b)
 $$
@@ -654,21 +711,27 @@ $$
 $$
 \delta^{(l)}_{i} = \sigma^{'}(z_{i}^{(l)})\sum_{j=1}^{k}(\delta^{(l+1)}_{j} w_{j,i}^{(l+1)})
 $$
+
 $$
 \delta^{(l)} = (W^{(l+1)})^{T}\delta^{(l+1)}\odot\sigma^{'}(z^{(l)})
 $$
+
 $$
 \frac{\partial L}{\partial w^{(l)}_{j,i}} = \delta^{(l)}_{j}a^{(l-1)}_{i}
 $$
+
 $$
 dw^{(l)} = \delta^{(l)}\times (a^{(l-1)})^{T}
 $$
+
 $$
 \frac{\partial L}{\partial b^{(l)}_{j}} = \delta^{(l)}_{j}
 $$
+
 $$
 db^{(l)} = \delta^{(l)}
 $$
+
 $$
 \theta_{i} \leftarrow \theta_{i} - \eta \frac{\partial L}{\partial \theta_{i}}
 $$
