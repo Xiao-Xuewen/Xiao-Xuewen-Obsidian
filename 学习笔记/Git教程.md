@@ -1,3 +1,20 @@
+# 零、常用Git指令（持续更新...）
+
+| 指令                                        | 作用                  |
+| ----------------------------------------- | ------------------- |
+| git init                                  | 初始化本地仓库             |
+| git status                                | 查看当前状态              |
+| git add                                   | 暂存文件                |
+| git add .                                 | 暂存当前目录下所有文件         |
+| git commit -m "message"                   | 提交暂存区的文件            |
+| git log                                   | 查看完整日志              |
+| git push -u origin main                   | 第一次push             |
+| git push                                  | 正常push              |
+| git switch -c 分支名                         | 创建并转移新分支            |
+| git branch                                | 查看分支                |
+| git switch 分支名                            | 切换分支                |
+| git commit --amend -m "新的 commit message" | 修改上一个commit的message |
+
 # 一、下载
 官网直接下载：[windows](https://git-scm.com/install/windows)
 在VS中检查有没有成功下载：点击左侧侧边栏的源代码管理即可
