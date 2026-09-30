@@ -55,12 +55,14 @@ $$
 $$
 N\sim \mathcal N(0,\sigma^2)
 $$
+
 典型的零均值噪声
 ### 1.3.2泊松噪声
 泊松噪声的性质也满足给定真实信号x，重复进行poisson observation 平均仍然回到真实信号x。
 
 $$
-Y\mid X=x\sim\operatorname{Poisson}(x)
+Y\mid X=x\sim\mathrm{Poisson}(x)
 $$
+
 # 2. N2N和N2C的区别
 实际上的面上的区别就是训练目标一个是clean 一个是noisy 但是实质上 满足要求的N2N的训练中心和N2C是一样的 都是clean 理论最优解是一样的 如果没有clean 那就重复采样 使用N2N
